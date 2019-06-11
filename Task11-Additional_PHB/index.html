@@ -177,19 +177,19 @@
 <ul>
 <li>Click <strong>Configuration&gt;Policy</strong> </li>
 </ul>
-<p><img alt="" src="Task11-Images/t9-vmanage-policy.png" /></p>
+<p><img alt="" src="../pics/t9-vmanage-policy.png" /></p>
 <ul>
 <li>
 <p>On the upper right hand, click <strong>Custom Options</strong> and select <strong>CLI Policy</strong></p>
-<p><img alt="" src="Task11-Images/t9-CLI-Policy.png" /></p>
+<p><img alt="" src="../pics/t9-CLI-Policy.png" /></p>
 </li>
 <li>
 <p>Select AAR-Policy and click <strong>...</strong> then select <strong>Deactivate</strong>,</p>
-<p><img alt="" src="Task11-Images/t11-Deactivate.png" /></p>
+<p><img alt="" src="../pics/t11-Deactivate.png" /></p>
 </li>
 <li>
 <p>Confirm deactivation by clicking <strong>Deactivate</strong> again</p>
-<p><img alt="" src="Task11-Images/t11-Deactivate2.png" /></p>
+<p><img alt="" src="../pics/t11-Deactivate2.png" /></p>
 </li>
 </ul>
 <h2 id="step-2-creating-new-custom-topology">Step 2: Creating New Custom Topology</h2>
@@ -199,89 +199,89 @@
 </li>
 <li>
 <p>Create another customs CLI topology by clicking <strong>Custom Options</strong> &gt; <strong>Topology</strong></p>
-<p><img alt="" src="Task11-Images/t11-Edit-Topology1.png" /></p>
+<p><img alt="" src="../pics/t11-Edit-Topology1.png" /></p>
 </li>
 <li>
 <p>Click <strong>...</strong> &gt; <strong>Copy</strong> next to <strong>Hub and Spoke</strong> policy</p>
-<p><img alt="" src="Task11-Images/t11-Copy-topology1.png" /></p>
+<p><img alt="" src="../pics/t11-Copy-topology1.png" /></p>
 </li>
 <li>
 <p>Enter new <strong>Topology Name</strong> and <strong>Description</strong></p>
 <p><strong>Policy Name</strong> <code>Partial-Hub-Spoke</code>
 <br/><strong>Description</strong> <code>Hub and Spoke for VPN 10, 20 while Full Mesh for VPN30</code></p>
-<p><img alt="" src="Task11-Images/t11-Copy-topology2.png" /></p>
+<p><img alt="" src="../pics/t11-Copy-topology2.png" /></p>
 </li>
 <li>
 <p>Edit <strong>Hub-Spoke Topology</strong> to create topology rules by selecting <strong>...</strong> &gt; <strong>Edit</strong> </p>
-<p><img alt="" src="Task11-Images/t11-Edit-Topology2.png" /></p>
+<p><img alt="" src="../pics/t11-Edit-Topology2.png" /></p>
 </li>
 <li>
 <p>Edit the 1st Rule by clicking <strong>Pencil icon</strong></p>
-<p><img alt="" src="Task11-Images/t11-Edit-Topology3.png" /></p>
+<p><img alt="" src="../pics/t11-Edit-Topology3.png" /></p>
 </li>
 <li>
 <p>Remove <strong>CL-Brach1</strong> from <strong>Site List</strong> and Add <strong>AllBranches</strong> </p>
 </li>
 <li>
 <p>Select <strong>VPN</strong> and click <strong>New VPN List</strong> to exclude <strong>VPN 30</strong></p>
-<p><img alt="" src="Task11-Images/t11-Edit-Topology4.png" /></p>
+<p><img alt="" src="../pics/t11-Edit-Topology4.png" /></p>
 </li>
 <li>
 <p>Enter <strong>VPN List Name</strong> add <strong>VPNs 10,20</strong> and click <strong>Save</strong></p>
-<p><img alt="" src="Task11-Images/t11-Edit-Topology5.png" /></p>
+<p><img alt="" src="../pics/t11-Edit-Topology5.png" /></p>
 </li>
 <li>
 <p>Select newly created VPN list <strong>VPN10-20</strong> and click <strong>Save Match And Actions</strong>, </p>
 </li>
 <li>
 <p>Delete the 2nd and 3rd Rule.</p>
-<p><img alt="" src="Task11-Images/t11-Delete-rule.png" /></p>
+<p><img alt="" src="../pics/t11-Delete-rule.png" /></p>
 </li>
 <li>
 <p>Click <strong>Save Control Policy</strong></p>
-<p><img alt="" src="Task11-Images/t11-Save-Topology-new.png" /></p>
+<p><img alt="" src="../pics/t11-Save-Topology-new.png" /></p>
 </li>
 </ul>
 <h2 id="step-3-importing-new-custom-topology-to-main-policy">Step 3: Importing New Custom Topology to Main Policy</h2>
 <ul>
 <li>
 <p>Click <strong>Centralized Policy</strong></p>
-<p><img alt="" src="Task11-Images/t11-Import-Topology1.png" /></p>
+<p><img alt="" src="../pics/t11-Import-Topology1.png" /></p>
 </li>
 <li>
 <p>Then on the next screen click <strong>Add Policy</strong> then click <strong>Next</strong></p>
 </li>
 <li>
 <p>Click <strong>Add Topology</strong> then select <strong>Import Existing Topology</strong></p>
-<p><img alt="" src="Task11-Images/t11-Import-Topology-new.png" /></p>
+<p><img alt="" src="../pics/t11-Import-Topology-new.png" /></p>
 </li>
 <li>
 <p>On Policy Type select <strong>Custom Control (Route and TLOC</strong> and on <strong>Policy</strong> select the new created <strong>Partial-Hub-Spoke</strong> topology</p>
-<p><img alt="" src="Task11-Images/t11-Import-Topology5.png" /></p>
+<p><img alt="" src="../pics/t11-Import-Topology5.png" /></p>
 </li>
 <li>
 <p>Click <strong>Next</strong></p>
-<p><img alt="" src="Task11-Images/t11-Import-Topology5ab.png" /></p>
+<p><img alt="" src="../pics/t11-Import-Topology5ab.png" /></p>
 </li>
 <li>
 <p>Click <strong>Next</strong> again</p>
-<p><img alt="" src="Task11-Images/t11-Import-Topology5abc.png" /></p>
+<p><img alt="" src="../pics/t11-Import-Topology5abc.png" /></p>
 </li>
 <li>
 <p>On <strong>Policy Application</strong> enter new policy name description page click <strong>New Site List</strong></p>
-<p><img alt="" src="Task11-Images/t11-Import-Topology6.png" /></p>
+<p><img alt="" src="../pics/t11-Import-Topology6.png" /></p>
 </li>
 <li>
 <p>On <strong>Outbound Site List</strong> select <strong>AllBranches</strong> then click <strong>Add</strong></p>
-<p><img alt="" src="Task11-Images/t11-Import-Topology7.png" /></p>
+<p><img alt="" src="../pics/t11-Import-Topology7.png" /></p>
 </li>
 <li>
 <p>Save Policy by clicking <strong>Save Policy Changes</strong> </p>
-<p><img alt="" src="Task11-Images/t11-Import-Topology8.png" /></p>
+<p><img alt="" src="../pics/t11-Import-Topology8.png" /></p>
 </li>
 <li>
 <p>Activate policy by selecting <strong>...</strong> then <strong>Activate Policy</strong></p>
-<p><img alt="" src="Task11-Images/t11-Import-Topology9.png" /></p>
+<p><img alt="" src="../pics/t11-Import-Topology9.png" /></p>
 </li>
 </ul>
 <h2 id="step-4-verification">Step 4: Verification</h2>
