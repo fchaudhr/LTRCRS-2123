@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="CX Team">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Task 7a Cloud onramp - AWS vEdge Template - LTRCRS-2123</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Task 7a Cloud onramp - AWS vEdge Template";
+    var mkdocs_page_input_path = "Task7a-Add and Attach AWS Template for vEdge Cloud Devices.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> LTRCRS-2123</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Task1-Connect/">Task 1 Remote Connection</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Task2-Exploring Control Plane/">Task 2 Control Plane</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Task3-vEdge/">Task 3 vEdge on internal networks</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Task4-Full-Mesh/">Task 4 Full-Mesh Data Plane on internal networks</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Task5-VPN creations/">Task 5 Establish VPN connectivity on Fabric</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Task6-OSPF_service/">Task 6 Establish OSPF on Service Side</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Task 7a Cloud onramp - AWS vEdge Template</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#task-7a-add-and-attach-aws-template-for-vedge-cloud-devices">Task 7a - Add and Attach AWS Template for vEdge Cloud Devices</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#step-1-add-aws-template-for-vedge-cloud-devices">Step 1: Add AWS Template for vEdge Cloud Devices</a></li>
+        
+            <li><a class="toctree-l3" href="#step-2-attach-aws-template-for-vedge-cloud-devices">Step 2: Attach AWS Template for vEdge Cloud Devices</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Task7b-Cloud onRamp for IaaS/">Task 7b Cloud onRamp for Iaas (AWS)</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Task7c-Verify vEdge Cloud Connectivity/">Task 7c Cloud onramp - Verify vEdge Cloud connectivity</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Task8-HubnSpoke_VPN20/">Task 8 Hub & Spoke Topology</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Task9-AAR/">Task 9 AAR</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Task10-Delete Cloud onRamp for IaaS/">Optional Task 10 - Delete Cloud Onramp</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Task11-Additional_PHB/">Optional Task 11 - Partial Hub and Spoke</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">LTRCRS-2123</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Task 7a Cloud onramp - AWS vEdge Template</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/fchaudhr/LTRCRS-2123.git/edit/master/docs/Task7a-Add and Attach AWS Template for vEdge Cloud Devices.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="task-7a-add-and-attach-aws-template-for-vedge-cloud-devices">Task 7a - Add and Attach AWS Template for vEdge Cloud Devices</h1>
+<p>In this task we will add and then attach AWS template for at least two (2) available vEdge devices to configure Cloud onRamp for Iaas in next Task.</p>
+<p><a name="Step1"></a></p>
+<h2 id="step-1-add-aws-template-for-vedge-cloud-devices">Step 1: Add AWS Template for vEdge Cloud Devices</h2>
+<ul>
+<li>
+<p>Log on the vManage from a web browser (if not already open) and use credentials of <code>admin</code> and <code>admin</code>:</p>
+<pre><code>  https://198.18.1.10
+</code></pre>
+<table>
+<thead>
+<tr>
+<th align="left">Note:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">If <code>admin/admin</code> credentials do not work then you may try using <code>cisco/cisco</code> or <code>cisco1/cisco1</code></td>
+</tr>
+</tbody>
+</table>
+<p>In order to add AWS Template; a <strong>CLI Template</strong> will be added so configurations of vEdge Cloud in AWS will be done via vManage directly. Use of "Feature Templates" on vManage is an alternate mechanism for centralization configurations from vManage, but it will not be used in this lab.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Important Note:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Be very careful in making configuration changes on vEdge.  <strong>Do NOT change</strong> any <strong>configuration</strong> of VPN 512 as it can result in loss of connectivity to the vEdge - which can not be restored.   You will have to start the lab again from Task #1 if you loose network connectivity to a vEdge.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>On the vManage GUI, navigate to <strong>Configuration &gt; Templates</strong>.  Under <strong>Device</strong> tab click <strong>Create Template</strong> and then select <code>CLI Template</code> as shown in the below screenshot:</p>
+<p><img alt="AWS CLITemplate" src="../pics/t7-AWS_CLITemplate.png" /></p>
+</li>
+<li>
+<p>Next, from the <strong>Device Model</strong> dropdown menu select <code>vEdge-Cloud</code></p>
+</li>
+<li>Enter <strong>Template Name</strong> of <code>CL-AWS_template</code></li>
+<li>Enter <strong>Description</strong> of <code>vEdge AWS Template</code></li>
+<li>In the <strong>CLI Configuration</strong> section copy and paste the  below configs:</li>
+</ul>
+<pre><code>system
+ host-name               {{hostname}}
+ system-ip               {{systemip}}
+ site-id                 {{siteid}}
+ sp-organization-name    &quot;Cisco Sy1 - 19968&quot;
+ organization-name       &quot;Cisco Sy1 - 19968&quot;
+ vbond vbond.cisco.com
+ aaa
+  auth-order local radius tacacs
+  usergroup basic
+   task system read write
+   task interface read write
+  !
+  usergroup netadmin
+  !
+  usergroup operator
+   task system read
+   task interface read
+   task policy read
+   task routing read
+   task security read
+  !
+  user admin
+   password admin
+  !
+  user cisco
+   password    cisco
+   description cisco
+   group       netadmin
+  !
+!
+banner
+ login &quot;Cisco Live SD-WAN - AWS&quot;
+!
+omp
+ no shutdown
+ ecmp-limit       8
+ graceful-restart
+ advertise connected
+ advertise static
+!
+
+vpn 0
+ host vbond.cisco.com ip {{vbond-public-ip}}
+ interface ge0/0
+  ip dhcp-client
+  tunnel-interface
+   encapsulation ipsec
+   color public-internet
+   no allow-service bgp
+   allow-service dhcp
+   allow-service dns
+   allow-service icmp
+   allow-service sshd
+   no allow-service netconf
+   allow-service ntp
+   no allow-service ospf
+   allow-service stun
+  !
+  no shutdown
+ !
+ !
+vpn 512
+ interface eth0
+  ip dhcp-client
+  no shutdown
+ !
+ !
+ vpn 10
+  interface loopback0
+   ip address 1.1.1.1/32
+   no shutdown
+ !
+!
+vpn 20
+ name BusinessVPN
+ interface loopback20
+  ip address {{vpn20-IP-address}}/32
+  no shutdown
+!
+vpn 30
+ name MarketingVPN
+ interface loopback30
+  ip address {{vpn30-IP-address}}/32
+  no shutdown
+!
+!
+!
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th align="left">Note:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Double curly brackets with <code>{{vbond-public-ip}}</code> must be entered as above.  Double curly brackets are interpreted as a variable by vManage and the appropriate IP address of vbond for your pod must be configured in subsequent bullets</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>Next <strong>Click</strong> <code>Add</code> as shown in the below screenshot:</p>
+<p><img alt="AWS Template" src="../pics/t7-AWS_CLITemplate2.png" /></p>
+</li>
+<li>
+<p>On the screen, verify that this Template has been added successfully</p>
+</li>
+</ul>
+<p><a name="Step2"></a></p>
+<h2 id="step-2-attach-aws-template-for-vedge-cloud-devices">Step 2: Attach AWS Template for vEdge Cloud Devices</h2>
+<p>Now let's attach two (2) vEdge Cloud devices to this newly created CLI Template.</p>
+<ul>
+<li>On the vManage GUI, navigate to <strong>Configuration &gt; Devices</strong>. Under <strong>WAN Edge List</strong> tab make sure there are at least two (2) vEdge Cloud devices available to be used using tokens for OTPs (one time password)</li>
+</ul>
+<p><img alt="AWS 2vEdge" src="../pics/t7-AWS_available_2vEdge.png" /></p>
+<ul>
+<li>
+<p>On the vManage GUI, <strong>Configuration &gt; Templates</strong> section:</p>
+<ul>
+<li>
+<p><strong>Click</strong> on the newly created Template named: <code>CL-AWS_Template</code></p>
+</li>
+<li>
+<p>Then <strong>Click</strong> the three dots <strong><code>...</code></strong> on the right side of this Template and  <strong>Select</strong>  <code>Attach Devices</code> option from the drop down menu as shown in the below screenshot:</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Pre-requisite:</strong>  If <code>CL-AWS_Template</code> is not listed in the <strong>Templates</strong> GUI, then please complete <a href="#Step1">Step 1</a> first.</p>
+<p><img alt="AWS AttachDevices" src="../pics/t7-AWS_AttachDevices.png" /></p>
+<ul>
+<li>On the <strong>Attach Devices</strong> window: <ul>
+<li>Under the <strong>Available Devices</strong> tab, <strong>Click</strong> on two (2) available uuid (without <strong>Device IP</strong>)</li>
+<li><strong>Click</strong> on the <code>Right Arrow icon</code> as shown in below screenshot.   At this point the vEdge should move to the <strong>Selected Devices</strong> tab</li>
+<li><strong>Click</strong> on the <code>Attach</code> button as shown in below screenshot</li>
+</ul>
+</li>
+</ul>
+<p><img alt="AWS AttachDevices" src="../pics/t7-AWS_AttachDevices2.png" /></p>
+<ul>
+<li>
+<p>On the next screen, <strong>Select</strong> the first vEdge.</p>
+</li>
+<li>
+<p><strong>Click</strong> the three dots <strong><code>...</code></strong> on the right side of this vEdge and  <strong>Select</strong>  <code>Edit Device Template</code> option from the drop down menu as shown in the below screenshot:</p>
+</li>
+</ul>
+<p><img alt="AWS AttachDevices" src="../pics/t7-AWS_EditDeviceTemplate.png" /></p>
+<ul>
+<li>Next, from the <strong>Update Device Template</strong> menu <ul>
+<li>Enter <strong>hostname</strong> of <code>vedge1</code></li>
+<li>Enter <strong>systemip</strong> of <code>66.66.66.1</code></li>
+<li>Enter <strong>siteid</strong> of <code>66</code></li>
+<li>Enter provided  <strong>vbond-public-ip</strong></li>
+<li>Enter <strong>vpn20-IP-address</strong> of <code>10.20.66.1</code></li>
+<li>Enter <strong>vpn30-IP-address</strong> of <code>10.30.66.1</code></li>
+<li>Click on the <code>Update</code> button</li>
+</ul>
+</li>
+</ul>
+<p><img alt="AWS AttachDevices" src="../pics/t7-AWS_EditDeviceTemplate2.png" /></p>
+<ul>
+<li>
+<p><strong>Select</strong> the second vEdge and <strong>Click</strong> the three dots <strong><code>...</code></strong> on the right side of this vEdge and  <strong>Select</strong>  <code>Edit Device Template</code> option from the drop down menu.</p>
+</li>
+<li>
+<p>Next, from the <strong>Update Device Template</strong> menu </p>
+<ul>
+<li>Enter <strong>hostname</strong> of <code>vedge2</code></li>
+<li>Enter <strong>systemip</strong> of <code>66.66.66.2</code></li>
+<li>Enter <strong>siteid</strong> of <code>66</code></li>
+<li>Enter provided  <strong>vbond-public-ip</strong></li>
+<li>Enter <strong>vpn20-IP-address</strong> of <code>10.20.66.2</code></li>
+<li>Enter <strong>vpn30-IP-address</strong> of <code>10.30.66.2</code></li>
+<li>Click on the <code>Update</code> button</li>
+</ul>
+</li>
+<li>
+<p>Once both vEdges are updated <strong>Click</strong> on <code>Next</code> as shown in the below screenshot:</p>
+</li>
+</ul>
+<p><img alt="AWS AttachDevices" src="../pics/t7-AWS_AttachDevices3.png" /></p>
+<ul>
+<li>On the next screen, <strong>Click</strong> on first vEdge on left section and <strong>Click</strong> on <code>Config Preview</code> and <code>Config Diff</code> options on the right side of window to review and confirm correct configurations are pushed to this vEdge Cloud.  </li>
+</ul>
+<p><img alt="AWS EditTemplate" src="../pics/t7-AWS_ConfigureDevices1.png" /></p>
+<ul>
+<li>Do the same for second vEdge as shown below.</li>
+</ul>
+<p><img alt="AWS EditTemplate" src="../pics/t7-AWS_ConfigureDevices2.png" /></p>
+<ul>
+<li><strong>CLick</strong> <code>Configure Devices</code> and <strong>Select</strong> <code>Confirm configuration changes on 2 devices</code> on <strong>Configure Devices</strong> pop-up window and then <strong>Click</strong> <code>OK</code>.</li>
+</ul>
+<p><img alt="AWS EditTemplate" src="../pics/t7-AWS_ConfigureDevices3.png" /></p>
+<ul>
+<li>Once device configurations are completed, on the subsequent screen verify that the template is attached successfully to vEdge Cloud Devices.</li>
+</ul>
+<p><img alt="AWS EditTemplate" src="../pics/t7-AWS_ConfigureDevices4.png" /></p>
+<hr />
+<p>This concludes the process to add and attach AWS Template for vEdge Cloud Devices using <strong>vManage</strong>.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Task7b-Cloud onRamp for IaaS/" class="btn btn-neutral float-right" title="Task 7b Cloud onRamp for Iaas (AWS)">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Task6-OSPF_service/" class="btn btn-neutral" title="Task 6 Establish OSPF on Service Side"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/fchaudhr/LTRCRS-2123.git/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../Task6-OSPF_service/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Task7b-Cloud onRamp for IaaS/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

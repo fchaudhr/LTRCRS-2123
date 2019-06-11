@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="CX Team">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Optional Task 10 - Delete Cloud Onramp - LTRCRS-2123</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Optional Task 10 - Delete Cloud Onramp";
+    var mkdocs_page_input_path = "Task10-Delete Cloud onRamp for IaaS.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> LTRCRS-2123</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Task1-Connect/">Task 1 Remote Connection</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Task2-Exploring Control Plane/">Task 2 Control Plane</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Task3-vEdge/">Task 3 vEdge on internal networks</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Task4-Full-Mesh/">Task 4 Full-Mesh Data Plane on internal networks</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Task5-VPN creations/">Task 5 Establish VPN connectivity on Fabric</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Task6-OSPF_service/">Task 6 Establish OSPF on Service Side</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Task7a-Add and Attach AWS Template for vEdge Cloud Devices/">Task 7a Cloud onramp - AWS vEdge Template</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Task7b-Cloud onRamp for IaaS/">Task 7b Cloud onRamp for Iaas (AWS)</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Task7c-Verify vEdge Cloud Connectivity/">Task 7c Cloud onramp - Verify vEdge Cloud connectivity</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Task8-HubnSpoke_VPN20/">Task 8 Hub & Spoke Topology</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Task9-AAR/">Task 9 AAR</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Optional Task 10 - Delete Cloud Onramp</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#optional-task-10-deleting-cloud-onramp-for-iaas-and-verification">Optional Task 10 - Deleting Cloud onRamp for IaaS and Verification</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#step-1-deleting-cloud-onramp-for-iaas-and-verification">Step 1: Deleting Cloud onRamp for IaaS and Verification</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Task11-Additional_PHB/">Optional Task 11 - Partial Hub and Spoke</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">LTRCRS-2123</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Optional Task 10 - Delete Cloud Onramp</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/fchaudhr/LTRCRS-2123.git/edit/master/docs/Task10-Delete Cloud onRamp for IaaS.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="optional-task-10-deleting-cloud-onramp-for-iaas-and-verification">Optional Task 10 - Deleting Cloud onRamp for IaaS and Verification</h1>
+<p>As per previous tasks, <strong>Cloud OnRamp for IaaS</strong> created public cloud resources in AWS such as transit VPC; two (2) vEdge Cloud devices, <strong>vEdge1</strong> and <strong>vEdge2</strong>; virtual private gateway, vpn connections between host and transit VPCs etc. This Task will delete these resources</p>
+<p><strong>Pre-requisite 1:</strong>  SDWAN controllers must be fully operational.  If those are not installed (or operational) then please complete the previous Tasks first.</p>
+<p><strong>Pre-requisite 2:</strong>  Pre-configured <strong>Cloud OnRamp for IaaS</strong> must be fully operational.  If it is not operational then please complete the previous Tasks first.</p>
+<p>You configure and manage <strong>Cloud OnRamp for IaaS</strong> through the vManage. A configuration wizard in the vManage automates the bring-up the transit to your public cloud account and automates the connections between public-cloud and branches in SDWAN overlay network. We will use same configuration wizard to delete it.</p>
+<h2 id="step-1-deleting-cloud-onramp-for-iaas-and-verification">Step 1: Deleting Cloud onRamp for IaaS and Verification</h2>
+<p>In this step you will unmap host transit VPC and then elete public cloud resources in AWS. </p>
+<ul>
+<li>Log on the vManage from a web browser (if not already open) and use credentials of <code>admin</code> and <code>admin</code>:</li>
+</ul>
+<p>~~~
+  https://198.18.1.10
+  ~~~</p>
+<pre><code>&gt; **Note:** if `admin/admin` credentials do not work then you may try using `cisco/cisco` or `cisco1/cisco1`
+</code></pre>
+<ul>
+<li>On the vManage GUI, navigate to <strong>Configuration &gt; Cloud onRamp for IaaS</strong> and click green up arrow under <strong>Mapped Host VPCs (Total: 1)</strong>. This will unmap host VPC.</li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_DeleteCloudonRamp.png" /></p>
+<ul>
+<li>Then checkmark host VPC <strong>SDWAN-hostVPC#</strong> <code>#=1,2,3,...,16</code> and click <strong>Un-Map VPCs</strong>.</li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_DeleteCloudonRamp2.png" /></p>
+<ul>
+<li>Click <strong>OK</strong>.</li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_DeleteCloudonRamp3.png" /></p>
+<ul>
+<li>Confirm unmapping host VPC successfully completed.</li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_DeleteCloudonRamp4.png" /></p>
+<blockquote>
+<p><strong>Note:</strong> Unmapping host VPC deletes all VPN connections to the VPN gateway in the host VPC, and then deletes the VPN gateway. When you make additional VPN connections to a mapped host VPC, they will be terminated as part of the unmapping process.</p>
+</blockquote>
+<ul>
+<li>Navigate back to <strong>Configuration &gt; Cloud onRamp for IaaS</strong> and click green up arrow under <strong>Transit VPCs (Total:1)</strong>. This will delete transit VPC.</li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_DeleteCloudonRamp5.png" /></p>
+<ul>
+<li>Click <strong>Transit VPCs</strong></li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_DeleteCloudonRamp6.png" /></p>
+<ul>
+<li>Click the <strong>Trash icon</strong> to the left of the row in order to delete the transit VPC.</li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_DeleteCloudonRamp7.png" /></p>
+<ul>
+<li>Click <strong>OK</strong></li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_DeleteCloudonRamp8.png" /></p>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_DeleteCloudonRamp9.png" /></p>
+<ul>
+<li>Status can be followed through vManage and AWS Management Console. In order to confirm the changes on AWS Management Console; log on to AWS from a web browser (if not already open) and click on <strong>Sign In to the Console</strong> </li>
+</ul>
+<pre><code>https://aws.amazon.com/console
+</code></pre>
+
+<p>Use credentials of the following:</p>
+<ul>
+<li>Account ID = <code>807272386705</code></li>
+<li>IAM user name = <code>CLUS_User#</code> <code>#=1,2,3,...,16</code></li>
+<li>Password = <code>CLUS19</code></li>
+</ul>
+<p><img alt="AWS Region" src="../pics/t7-AWS_login.png" /></p>
+<p>Once connected to AWS Management Console, verify assigned region is selected on the navigation bar for your given number.</p>
+<p>Select region list from up-right corner of the console as shown below and select your respective region. As an example, CLUS_User1 is to select US East (Ohio) region.</p>
+<p><img alt="AWS Region" src="../pics/t7-AWS_region_verfication.png" /></p>
+<p>Then click on <code>Services</code> on the navigation pane and select <strong>EC2</strong> from <strong>Compute</strong> menu. </p>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_CreateAWS5.png" /></p>
+<p>Select <strong>Instances</strong></p>
+<p><center><img src="pics/t7-AWS_CloudonRamp_CreateAWS6.png" width="400"></center></p>
+<p>You will see vEdge Cloud instances has started to be terminated.</p>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_DeleteCloudonRamp10.png" /></p>
+<p>On vManage, confirm that transit VPC, vEdges, interfaces, subnets and internet gateway have been successfully deleted.</p>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_DeleteCloudonRamp11.png" /></p>
+<p>In order to confirm vEdges has been terminated successfully, go back to AWS Management Console and click <strong>Refresh</strong> the page.</p>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_DeleteCloudonRamp12.png" /></p>
+<p>Then, confirm transit VPC has been deleted by clicking on <code>Services</code> on the navigation pane and selecting <strong>VPC</strong> from <strong>Network &amp; Content Delivery</strong> menu.</p>
+<p><img alt="AWS hostVPC" src="../pics/t7-AWS_select_VPC.png" /></p>
+<p>Click on <strong>Your VPCs</strong> on the VPC navigation pane.</p>
+<p><img alt="AWS Region" src="../pics/t7-AWS_yourVPCs.png" /></p>
+<p>Confirm <code>SDWAN-transitVPC#</code> has been successfully deleted.</p>
+<h2 id="_1"><img alt="AWS CloudonRamp" src="../pics/t7-AWS_DeleteCloudonRamp13.png" /></h2>
+<p>This concludes the process to delete <strong>Cloud onRamp for Iaas</strong> and execute verification.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Task11-Additional_PHB/" class="btn btn-neutral float-right" title="Optional Task 11 - Partial Hub and Spoke">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Task9-AAR/" class="btn btn-neutral" title="Task 9 AAR"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/fchaudhr/LTRCRS-2123.git/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../Task9-AAR/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Task11-Additional_PHB/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

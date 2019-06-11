@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="CX Team">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Task 7b Cloud onRamp for Iaas (AWS) - LTRCRS-2123</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Task 7b Cloud onRamp for Iaas (AWS)";
+    var mkdocs_page_input_path = "Task7b-Cloud onRamp for IaaS.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> LTRCRS-2123</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Task1-Connect/">Task 1 Remote Connection</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Task2-Exploring Control Plane/">Task 2 Control Plane</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Task3-vEdge/">Task 3 vEdge on internal networks</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Task4-Full-Mesh/">Task 4 Full-Mesh Data Plane on internal networks</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Task5-VPN creations/">Task 5 Establish VPN connectivity on Fabric</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Task6-OSPF_service/">Task 6 Establish OSPF on Service Side</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Task7a-Add and Attach AWS Template for vEdge Cloud Devices/">Task 7a Cloud onramp - AWS vEdge Template</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Task 7b Cloud onRamp for Iaas (AWS)</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#task-7b-configuring-cloud-onramp-for-iaas">Task 7b - Configuring Cloud onRamp for IaaS</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#step-1-verify-cisco-sdwan-and-viptela-vedge-amis-subscription">Step 1: Verify Cisco SDWAN and Viptela vEdge AMIs Subscription</a></li>
+        
+            <li><a class="toctree-l3" href="#step-2-create-host-vpc-in-aws">Step 2: Create host VPC in AWS</a></li>
+        
+            <li><a class="toctree-l3" href="#step-3-aws-api-and-secret-keys">Step 3: AWS API and Secret Keys</a></li>
+        
+            <li><a class="toctree-l3" href="#step-4-configuring-cloud-onramp-for-iaas-for-aws">Step 4: Configuring Cloud onRamp for IaaS for AWS</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Task7c-Verify vEdge Cloud Connectivity/">Task 7c Cloud onramp - Verify vEdge Cloud connectivity</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Task8-HubnSpoke_VPN20/">Task 8 Hub & Spoke Topology</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Task9-AAR/">Task 9 AAR</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Task10-Delete Cloud onRamp for IaaS/">Optional Task 10 - Delete Cloud Onramp</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Task11-Additional_PHB/">Optional Task 11 - Partial Hub and Spoke</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">LTRCRS-2123</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Task 7b Cloud onRamp for Iaas (AWS)</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/fchaudhr/LTRCRS-2123.git/edit/master/docs/Task7b-Cloud onRamp for IaaS.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="task-7b-configuring-cloud-onramp-for-iaas">Task 7b - Configuring Cloud onRamp for IaaS</h1>
+<p>Cloud onRamp for IaaS allows remote branches and data centers with vEdge routers to connect directly to public cloud providers.</p>
+<p>This Task will walk through the steps to configure <strong>Cloud OnRamp for IaaS</strong> that extends the fabric of the Viptela overlay network into public cloud instances.</p>
+<p>As per previous steps, two (2) vEdges in Branch 1 and Branch 2 and one (1) vEdge in DC have been onboarded. This Task will add two (2) redundant vEdge Cloud routers which will act together as a transit betwwen SDWAN overlay network and public cloud instances.</p>
+<p><strong>Pre-requisite 1:</strong>  SDWAN controllers must be fully operational.  If those are not installed (or operational) then please complete the previous Tasks first.</p>
+<p><strong>Pre-requisite 2:</strong>  Pre-configured three (3) vEdges (in Branch 1, Branch 2 and DC) must be fully operational.  If those are not operational then please complete the previous Tasks first.</p>
+<p><strong>Pre-requisite 3:</strong> At least 2 unused vEdge Cloud devices with AWS templates attached should be available in vManage. This is to add new cloud instances. If those are not attached then please complete Task 7a first.</p>
+<p>You configure and manage <strong>Cloud OnRamp for IaaS</strong> through the vManage. A configuration wizard in the vManage automates the bring-up the transit to your public cloud account and automates the connections between public-cloud and branches in SDWAN overlay network.</p>
+<h2 id="step-1-verify-cisco-sdwan-and-viptela-vedge-amis-subscription">Step 1: Verify Cisco SDWAN and Viptela vEdge AMIs Subscription</h2>
+<p>In this step you will verify Cisco SDWAN and Viptela vEdge Amazon Machine Images (AMIs) subscription in AWS marketplace with your AWS user account in order to use the Cloud OnRamp for IaaS and other SDWAN services. You subscribe to these AMI only once.</p>
+<p>To create a new AMI subscription:</p>
+<p>Log on to AWS marketplace from a web browser (if not already open) and click on <strong>Sign In</strong> </p>
+<pre><code>https://aws.amazon.com/marketplace
+</code></pre>
+
+<p><img alt="AWS hostVPC" src="../pics/t7-AWS_AMI.png" /> </p>
+<p>Use credentials of the following:</p>
+<ul>
+<li>Account ID = <code>807272386705</code></li>
+<li>IAM user name = <code>CLUS_User#</code> <code>#=1,2,3,...,16</code></li>
+<li>Password = <code>CLUS19</code></li>
+</ul>
+<p><img alt="AWS hostVPC" src="../pics/t7-AWS_login.png" /></p>
+<ul>
+<li>Search <code>Cisco SDWAN</code> and click <strong>Cisco vEdge Cloud Router</strong> from the list of results.</li>
+</ul>
+<p><img alt="AWS hostVPC" src="../pics/t7-AWS_AMI2.png" /></p>
+<ul>
+<li>Click <strong>Continue to Subscribe</strong></li>
+</ul>
+<p><img alt="AWS hostVPC" src="../pics/t7-AWS_AMI3.png" /></p>
+<ul>
+<li>Verify you are already subscribed to this product.</li>
+</ul>
+<p><img alt="AWS hostVPC" src="../pics/t7-AWS_AMI4.png" /></p>
+<ul>
+<li>Do the same for <strong>Viptela vEdge Cloud Router</strong></li>
+</ul>
+<p><img alt="AWS hostVPC" src="../pics/t7-AWS_AMI5.png" /></p>
+<p><a name="Step2"></a></p>
+<h2 id="step-2-create-host-vpc-in-aws">Step 2: Create host VPC in AWS</h2>
+<p>In this step we will create host VPC (Virtual Private Cloud) in respective AWS region which will be identified in next steps.</p>
+<p>Log on to AWS from a web browser (if not already open) and click on <strong>Sign In to the Console</strong> </p>
+<pre><code>https://aws.amazon.com/console
+</code></pre>
+
+<p>Use credentials of the following:</p>
+<ul>
+<li>Account ID = <code>807272386705</code></li>
+<li>IAM user name = <code>CLUS_User#</code> <code>#=1,2,3,...,16</code></li>
+<li>Password = <code>CLUS19</code></li>
+</ul>
+<p><img alt="AWS Login" src="../pics/t7-AWS_login.png" /></p>
+<p>Once connected to AWS Management Console, verify <strong>US East (N. Virginia)</strong> region is selected on the navigation bar. Please see below for details:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Note:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Region Name= US East (N.Virginia)</td>
+</tr>
+<tr>
+<td align="left">Code Name= us-east-1</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th align="left">Note:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">If you have created AWS resources, but you don’t see those resources in the console, the console might be displaying resources from a different Region. Please make sure to select <strong>US East (N.Virginia)</strong> region. Otherwise for any activity you try to execute, <code>You are not authorized to perform this operation.</code> message will pop-up.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Select region list from up-right corner of the console as shown below and select your respective region as <strong>US East (N. Virginia)</strong>.</li>
+</ul>
+<p><img alt="AWS Region" src="../pics/t7-AWS_region_verfication.png" /></p>
+<ul>
+<li>Then click on <code>Services</code> on the navigation pane and select <strong>VPC</strong> from <strong>Network &amp; Content Delivery</strong> menu.</li>
+</ul>
+<p><img alt="AWS hostVPC" src="../pics/t7-AWS_select_VPC.png" /></p>
+<ul>
+<li>Click on <strong>Your VPCs</strong> on the VPC navigation pane.</li>
+</ul>
+<p><img alt="AWS hostVPC" src="../pics/t7-AWS_yourVPCs.png" /></p>
+<ul>
+<li>and then click on <code>Create VPC</code></li>
+</ul>
+<p><img alt="AWS hostVPC" src="../pics/t7-AWS_createVPC.png" /></p>
+<ul>
+<li>
+<p>Using <code>#=1,2,3,...,16</code> create host VPC with following settings:</p>
+</li>
+<li>
+<p>Name the host VPC as <code>SDWAN-hostVPC#</code> </p>
+</li>
+<li>Specify IPv4 CIDR block as <code>10.#.0.0/16</code></li>
+<li>Leave rest of the options as default and click on <code>Create</code> and then <code>Close</code></li>
+</ul>
+<p><img alt="AWS hostVPC" src="../pics/t7-AWS_createVPC2.png" /></p>
+<ul>
+<li>Verify host VPC <strong>SDWAN_hostVPC#</strong> is created.</li>
+</ul>
+<p><img alt="AWS hostVPC" src="../pics/t7-AWS_createVPC3.png" /></p>
+<p><a name="Step3"></a></p>
+<h2 id="step-3-aws-api-and-secret-keys">Step 3: AWS API and Secret Keys</h2>
+<p>Different types of security credentials are used depending on how you interact with AWS. For example, you use a user name and password to sign in to the AWS Management Console.  Additionally, you use access keys to make programmatic calls to AWS API operations or to use AWS CLI commands. We will use  access keys in next step.  </p>
+<ul>
+<li>The Access keys will be provided to you by lab instructors</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Important Note:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">If you do not have access keys then contact the lab instructors</td>
+</tr>
+</tbody>
+</table>
+<p><a name="Step4"></a></p>
+<h2 id="step-4-configuring-cloud-onramp-for-iaas-for-aws">Step 4: Configuring Cloud onRamp for IaaS for AWS</h2>
+<p>In this step we will configure Cloud OnRamp for IaaS through vManage for AWS and create AWS transit VPC, which consists of a pair of vEdge routers. You then map the transit VPC to host VPC that already exists in the AWS cloud created in <a href="#Step2">Step 2</a>.</p>
+<p><strong>Pre-requisite 1</strong>  At least 2 unused vEdge devices with templates attached should be available in vManage. This is to add new cloud instances. If those are not attached then please complete Task 7a first.</p>
+<p><strong>Pre-requisite 2</strong> AWS API and Secret Keys should be known at this step. If not then please complete the previous step first.</p>
+<ul>
+<li>Log on the vManage from a web browser (if not already open) and use credentials of <code>admin</code> and <code>admin</code>:</li>
+</ul>
+<pre><code>https://198.18.1.10
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th align="left">Note:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">If <code>admin/admin</code> credentials do not work then you may try using <code>cisco/cisco</code> or <code>cisco1/cisco1</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>On the vManage GUI, navigate to <strong>Configuration &gt; Cloud onRamp for IaaS</strong>.  </p>
+</li>
+<li>
+<p>We will use a configuration wizard in vManage that automates to bring-up vEdge Cloud routers using your AWS public cloud user account and automates the connections between public cloud and branches &amp; DC in the SDWAN overlay network. Click on <strong>Add New Cloud Instance</strong> as shown below.</p>
+</li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp.png" /></p>
+<ul>
+<li>In the <strong>Add Cloud Instance-Log In to a Cloud Server</strong> popup:<ul>
+<li>Select <strong>amazon web services</strong> and Click on <strong>Login</strong></li>
+</ul>
+</li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudLogin.png" /></p>
+<ul>
+<li>Select <strong>Key</strong> and open <code>accessKeys.csv</code> file.<ul>
+<li>Copy <strong>Access key ID</strong> from <code>accessKeys.csv</code> file and paste as <strong>API Key</strong>.</li>
+<li>Copy <strong>Secret access key</strong> from <code>accessKeys.csv</code> file and paste as <strong>Secret Key</strong></li>
+<li>Close <code>accessKeys.csv</code> file.</li>
+<li><strong>Click</strong> <code>Login</code>.</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Important Note:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">If you can not locate <code>accessKeys.csv</code> in your PC, then please complete <a href="#Step3">Step 3</a> first.</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudLogin2.png" /></p>
+<p><a name="selectregionCloudonRamp"></a></p>
+<ul>
+<li>Next, select your AWS region from <strong>Choose Region</strong> drop down menu in <strong>Select a Region and Create Transit VPCs</strong> step. A graphic on the right side of the screen illustrates the steps in the cloud instance configuration process. Steps not yet completed are shown in light gray. Completed steps are indicated with a green checkmark and are shown in light orange.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Important Note:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Please make sure to select the right AWS region as <strong>us-east-1 (N. Virginia)</strong>. If you are not sure which AWS region you are working in, then please complete <a href="#Step2">Step 2</a> first.</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_Region.png" /></p>
+<ul>
+<li>Next, enter Transit VPC and Device Information parameters as below:<ul>
+<li>Using <code>#=1,2,3,...,16</code> name the transit VPC as <code>SDWAN-transitVPC#</code> </li>
+<li>Select <code>18.3.0</code> as the <strong>WAN Edge Version</strong> from drop-down menu</li>
+<li>Select <code>c4.large (2 vCPU)</code> for <strong>Size of the Transit vEdge</strong></li>
+<li>Select <code>vEdge1 : uuid</code> as <strong>Device 1</strong></li>
+<li>Select <code>vEdge2 : uuid</code> as <strong>Device 2</strong></li>
+<li>Expand <strong>Advanced</strong> menu if you wish to enter more specific configuration options. For this lab, we will leave rest of the options as default and click on <code>Proceed to Discovery and Mapping</code> to move forward.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_Parameters.png" /></p>
+<ul>
+<li><strong>Discover Host VPCs</strong> step will allow you to select <code>807272386705</code> from <strong>Select an account to discover</strong> list and then click <code>Discover Host VPCs</code>.</li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_Discover.png" /></p>
+<ul>
+<li>On the next screen, please verify desired Host VPC in <strong>Discovered Host VPCs</strong> step which has been created in <a href="#Step2">Step 2</a>. Please see below screenshot for <code>CLUS_User1</code> and discovered Host VPC is <code>SDWAN-hostVPC1</code>. Checkmark it and then click <code>Next</code>.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Important Notes:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Please make sure to select the right AWS region as <strong>us-east-1 (N. Virginia)</strong>. If you are not sure which AWS region you are working in, then please complete <a href="#Step2">Step 2</a> first</td>
+</tr>
+<tr>
+<td align="left">If you don’t see Host VPC in the console, then please complete the <a href="#Step2">Step 2</a> first.</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_HostVPC.png" /></p>
+<ul>
+<li>Next, Click <code>Map VPCs</code>in <strong>Map Host VPCs to Transit VPCs</strong> step.</li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_MapVPC.png" /></p>
+<ul>
+<li>The <strong>Map Host VPCs</strong> pop-up window opens, make sure following parameters are configured and then click <code>Map VPCs</code>.<ul>
+<li>Using <code>#=1,2,3,...,16</code> verify <strong>Transit VPC</strong> as <code>SDWAN-transitVPC#</code>. As an example, it should be <code>SDWAN-transitVPC1</code> for <code>CLUS_User1</code></li>
+<li>Verify <strong>VPN</strong> as <code>10</code></li>
+<li>Enable <strong>Route Propagation</strong> to ensure that <strong>Transit VPC</strong> receives the routes.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_MapVPC2.png" /></p>
+<ul>
+<li>Now, you will see <code>SDWAN-hostVPC1</code> is not checkmarked anymore, this is because Host VPC and Transit VPC are successfully mapped. To verify, make sure <strong>Mapping Status</strong> is green and then click <code>Save and Complete</code>. </li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_MapVPC3.png" /></p>
+<table>
+<thead>
+<tr>
+<th align="left">Note:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">The mapping process establishes IPsec and BGP connections between the transit VPC and host VPC. The IPsec tunnel that connects the transit and host VPC runs IKE to provide security for the connection. For AWS, the IPsec tunnel runs IKE Version 1. The BGP connection that is established over the secure IPsec tunnel allows the transit and host VPC to exchange routes so that the transit VPC can direct traffic from the branch to the proper host VPC, and hence to the proper cloud-based application.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Creating AWS resources such as Transit VPC, Internet Gateway, vEdge Cloud pair and setting up the infrastructure will take 10-15 minutes time. Progress can be tracked through <strong>Status</strong> and <strong>Message</strong> updates on vManage as shown below:</li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_CreateAWS.png" /></p>
+<ul>
+<li>In order to verify the progress from AWS Management Console, Click <strong>Services</strong>.</li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRampVerify.png" /></p>
+<ul>
+<li>Then select <strong>VPC</strong> from <strong>Networking &amp; Content Delivery</strong> menu.</li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRampVerify2.png" /></p>
+<ul>
+<li>You will see <strong>VPC Dasboard</strong> which provides a summary of provisioned resources by your region. Click <strong>VPCs</strong></li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRampVerify3.png" /></p>
+<ul>
+<li>As shown below Transit VPC is now created on AWS of <code>SDWAN-transitVPC1</code> during <strong>Cloud onRamp for IaaS</strong> task is still running.</li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_CreateAWS2.png" /></p>
+<ul>
+<li>on vManage GUI, review provisioning vEdge Cloud routers for Transit VPC.</li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_CreateAWS3.png" /></p>
+<ul>
+<li>In order to verify vEdge Cloud instances in AWS, go back to AWS Management Console and Click <code>Services</code></li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_CreateAWS4.png" /></p>
+<ul>
+<li>Select <strong>EC2</strong> from <strong>Compute</strong> menu</li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_CreateAWS5.png" /></p>
+<ul>
+<li>Select <strong>Instances</strong></li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_CreateAWS6.png" /></p>
+<ul>
+<li>Verify vEdge Cloud instances are <strong>Initializing</strong> status meaning that vEDge Cloud instances status checks are still in progress.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Note:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">There are two types of status checks: system status checks and instance status checks.</td>
+</tr>
+<tr>
+<td align="left"><strong>System Status Checks</strong> detect underlying problems with your instance. <strong>Instance Status Checks</strong> monitor the software and network configuration of your individual instance.</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_CreateAWS7.png" /></p>
+<ul>
+<li>Once <strong>Status Checks</strong> are updated as <strong>2/2 checks passed</strong>, this means vEdge Cloud router provisioning is completed successfully.</li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_CreateAWS8.png" /></p>
+<ul>
+<li>On the vManage GUI, verify that <strong>Cloud onRamp for IaaS</strong> task has been completed successfully. </li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_CreateAWS9.png" /></p>
+<p>| Important Note: |
+|:--------------|
+| Below is a sample list of messages created by <strong>Cloud onRamp for IaaS</strong> task to provision AWS resources and a screenshot from <strong>vManage &gt; Configuration &gt; Cloud onRamp for IaaS</strong> GUI.
+[12-Jan-2019 15:07:13 UTC] Creating gateway vpc/vnet:SDWAN-transitVPC1
+[12-Jan-2019 15:07:16 UTC] Creating Transit VPC in region: us-east-2 for account 807272386705
+[12-Jan-2019 15:07:23 UTC] Setting up an internet gateway for Transit VPC: vpc-0319a79c86b56b022
+[12-Jan-2019 15:07:29 UTC] Created vpc: vpc-0319a79c86b56b022, igw: igw-0ccb98a2a83f068d9
+[12-Jan-2019 15:07:29 UTC] Creating vEdge pair for Transit VPC: vpc-0319a79c86b56b022
+[12-Jan-2019 15:10:04 UTC] Done creating two vEdges: ['i-07852d85c955152cb', 'i-0d2dc55af857caa07'] in Transit VPC: vpc-0319a79c86b56b022
+[12-Jan-2019 15:10:09 UTC] Mapping Host VPC in account 807272386705 to Transit VPC in account 807272386705
+[12-Jan-2019 15:10:09 UTC] Region : us-east-2
+[12-Jan-2019 15:10:10 UTC] Setting up host VPC: vpc-019310fca7f411e13
+[12-Jan-2019 15:10:11 UTC] Creating virtual private gateway
+[12-Jan-2019 15:10:15 UTC] Created virtual private gateway: vgw-03b9cc1782fd775b4
+[12-Jan-2019 15:12:02 UTC] Enabled route propagation on vgw-03b9cc1782fd775b4
+[12-Jan-2019 15:12:04 UTC] Created cgw-013db59e2c4fea191
+[12-Jan-2019 15:12:05 UTC] Setting up vpn connections between host VPC vpc-019310fca7f411e13 and Transit VPC vpc-0319a79c86b56b022
+[12-Jan-2019 15:18:45 UTC] Created vpn connection: vpn-0c4a20a8dddc5359d
+[12-Jan-2019 15:18:46 UTC] Enabled route propagation on vgw-03b9cc1782fd775b4
+[12-Jan-2019 15:18:48 UTC] Created cgw-0fe99917304e7ed7f
+[12-Jan-2019 15:18:48 UTC] Setting up vpn connections between host VPC vpc-019310fca7f411e13 and Transit VPC vpc-0319a79c86b56b022
+[12-Jan-2019 15:25:01 UTC] Created vpn connection: vpn-097e752fbbc701b21
+[12-Jan-2019 15:25:01 UTC] Done creating vpn connections between host VPC vpc-019310fca7f411e13 and transit VPC vpc-0319a79c86b56b022
+[12-Jan-2019 15:25:01 UTC] Completed mapping host vpc(s) |</p>
+<ul>
+<li><strong>Configuration &gt; Cloud onRamp for Iaas</strong> GUI final view will be as shown below.</li>
+</ul>
+<p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_CreateAWS10.png" /></p>
+<hr />
+<p>This concludes the process to onboard two (2) vEdge Cloud routers in AWS and configure <strong>Cloud onRamp for Iaas for AWS</strong>.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Task7c-Verify vEdge Cloud Connectivity/" class="btn btn-neutral float-right" title="Task 7c Cloud onramp - Verify vEdge Cloud connectivity">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Task7a-Add and Attach AWS Template for vEdge Cloud Devices/" class="btn btn-neutral" title="Task 7a Cloud onramp - AWS vEdge Template"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/fchaudhr/LTRCRS-2123.git/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../Task7a-Add and Attach AWS Template for vEdge Cloud Devices/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Task7c-Verify vEdge Cloud Connectivity/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>
