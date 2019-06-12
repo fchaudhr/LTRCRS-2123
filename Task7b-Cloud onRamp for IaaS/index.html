@@ -198,6 +198,18 @@
 <li>IAM user name = <code>CLUS_User#</code> <code>#=1,2,3,...,16</code></li>
 <li>Password = <code>CLUS19</code></li>
 </ul>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>Note</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">The number sign <code>#</code> needs to be replaced by your pod number<code>(#=1,2,3,...,16)</code>. Use given number while identifying your IAM user name. As an example for <code>pod1</code> IAM user name should be <code>CLUS_User1</code></td>
+</tr>
+</tbody>
+</table>
 <p><img alt="AWS hostVPC" src="../pics/t7-AWS_login.png" /></p>
 <ul>
 <li>Search <code>Cisco SDWAN</code> and click <strong>Cisco vEdge Cloud Router</strong> from the list of results.</li>
@@ -228,6 +240,18 @@
 <li>IAM user name = <code>CLUS_User#</code> <code>#=1,2,3,...,16</code></li>
 <li>Password = <code>CLUS19</code></li>
 </ul>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>Note</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">The number sign <code>#</code> needs to be replaced by your pod number<code>(#=1,2,3,...,16)</code>. Use given number while identifying your IAM user name. As an example for <code>pod1</code> IAM user name should be <code>CLUS_User1</code></td>
+</tr>
+</tbody>
+</table>
 <p><img alt="AWS Login" src="../pics/t7-AWS_login.png" /></p>
 <p>Once connected to AWS Management Console, verify <strong>US East (N. Virginia)</strong> region is selected on the navigation bar. Please see below for details:</p>
 <table>
@@ -274,12 +298,22 @@
 </ul>
 <p><img alt="AWS hostVPC" src="../pics/t7-AWS_createVPC.png" /></p>
 <ul>
-<li>
-<p>Using <code>#=1,2,3,...,16</code> create host VPC with following settings:</p>
-</li>
-<li>
-<p>Name the host VPC as <code>SDWAN-hostVPC#</code> </p>
-</li>
+<li>Using <code>#=1,2,3,...,16</code> create host VPC with following settings:</li>
+<li>Name the host VPC as <code>SDWAN-hostVPC#</code> </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>Note</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">The number sign <code>#</code> needs to be replaced by your IAM user name number<code>(#=1,2,3,...,16)</code>. Use given number while identifying your host VPC. As an example for <code>CLUS_User1</code> host VPC name should be <code>SDWAN-hostVPC1</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li>Specify IPv4 CIDR block as <code>10.#.0.0/16</code></li>
 <li>Leave rest of the options as default and click on <code>Create</code> and then <code>Close</code></li>
 </ul>
@@ -292,7 +326,8 @@
 <h2 id="step-3-aws-api-and-secret-keys">Step 3: AWS API and Secret Keys</h2>
 <p>Different types of security credentials are used depending on how you interact with AWS. For example, you use a user name and password to sign in to the AWS Management Console.  Additionally, you use access keys to make programmatic calls to AWS API operations or to use AWS CLI commands. We will use  access keys in next step.  </p>
 <ul>
-<li>The Access keys will be provided to you by lab instructors</li>
+<li>The Access keys can be found in <code>accessKeys.csv</code> file within following box folder:
+<a href="https://bit.ly/2KcPg10">https://bit.ly/2KcPg10</a></li>
 </ul>
 <table>
 <thead>
@@ -302,7 +337,7 @@
 </thead>
 <tbody>
 <tr>
-<td align="left">If you do not have access keys then contact the lab instructors</td>
+<td align="left">If you do not have access keys then please contact lab instructors.</td>
 </tr>
 </tbody>
 </table>
@@ -362,7 +397,7 @@
 </thead>
 <tbody>
 <tr>
-<td align="left">If you can not locate <code>accessKeys.csv</code> in your PC, then please complete <a href="#Step3">Step 3</a> first.</td>
+<td align="left">If you can not locate <code>accessKeys.csv</code> in box folder, then please contact lab instructors.</td>
 </tr>
 </tbody>
 </table>
@@ -385,7 +420,9 @@
 </table>
 <p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_Region.png" /></p>
 <ul>
-<li>Next, enter Transit VPC and Device Information parameters as below:<ul>
+<li>
+<p>Next, enter Transit VPC and Device Information parameters as below:</p>
+<ul>
 <li>Using <code>#=1,2,3,...,16</code> name the transit VPC as <code>SDWAN-transitVPC#</code> </li>
 <li>Select <code>18.3.0</code> as the <strong>WAN Edge Version</strong> from drop-down menu</li>
 <li>Select <code>c4.large (2 vCPU)</code> for <strong>Size of the Transit vEdge</strong></li>
@@ -395,6 +432,18 @@
 </ul>
 </li>
 </ul>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>Note</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">The number sign <code>#</code> needs to be replaced by your IAM user name number<code>(#=1,2,3,...,16)</code>. Use given number while identifying your transit VPC. As an example for <code>CLUS_User1</code> transit VPC name should be <code>SDWAN-transitVPC1</code></td>
+</tr>
+</tbody>
+</table>
 <p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_Parameters.png" /></p>
 <ul>
 <li><strong>Discover Host VPCs</strong> step will allow you to select <code>807272386705</code> from <strong>Select an account to discover</strong> list and then click <code>Discover Host VPCs</code>.</li>
