@@ -560,11 +560,20 @@
 <li>On the vManage GUI, verify that <strong>Cloud onRamp for IaaS</strong> task has been completed successfully. </li>
 </ul>
 <p><img alt="AWS CloudonRamp" src="../pics/t7-AWS_CloudonRamp_CreateAWS9.png" /></p>
-<p>| Important Note: |
-|:--------------|
-| Below is a sample list of messages created by <strong>Cloud onRamp for IaaS</strong> task to provision AWS resources and a screenshot from <strong>vManage &gt; Configuration &gt; Cloud onRamp for IaaS</strong> GUI.
-[12-Jan-2019 15:07:13 UTC] Creating gateway vpc/vnet:SDWAN-transitVPC1
-[12-Jan-2019 15:07:16 UTC] Creating Transit VPC in region: us-east-2 for account 807272386705
+<table>
+<thead>
+<tr>
+<th align="left">Important Note:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Below is a sample list of messages created by <strong>Cloud onRamp for IaaS</strong> task to provision AWS resources and a screenshot from <strong>vManage &gt; Configuration &gt; Cloud onRamp for IaaS</strong> GUI.</td>
+</tr>
+</tbody>
+</table>
+<pre><code>[12-Jan-2019 15:07:13 UTC] Creating gateway vpc/vnet:SDWAN-transitVPC1
+[12-Jan-2019 15:07:16 UTC] Creating Transit VPC in region: us-east-2 for account 807272386705 
 [12-Jan-2019 15:07:23 UTC] Setting up an internet gateway for Transit VPC: vpc-0319a79c86b56b022
 [12-Jan-2019 15:07:29 UTC] Created vpc: vpc-0319a79c86b56b022, igw: igw-0ccb98a2a83f068d9
 [12-Jan-2019 15:07:29 UTC] Creating vEdge pair for Transit VPC: vpc-0319a79c86b56b022
@@ -583,7 +592,8 @@
 [12-Jan-2019 15:18:48 UTC] Setting up vpn connections between host VPC vpc-019310fca7f411e13 and Transit VPC vpc-0319a79c86b56b022
 [12-Jan-2019 15:25:01 UTC] Created vpn connection: vpn-097e752fbbc701b21
 [12-Jan-2019 15:25:01 UTC] Done creating vpn connections between host VPC vpc-019310fca7f411e13 and transit VPC vpc-0319a79c86b56b022
-[12-Jan-2019 15:25:01 UTC] Completed mapping host vpc(s) |</p>
+[12-Jan-2019 15:25:01 UTC] Completed mapping host vpc(s)
+</code></pre>
 <ul>
 <li><strong>Configuration &gt; Cloud onRamp for Iaas</strong> GUI final view will be as shown below.</li>
 </ul>
